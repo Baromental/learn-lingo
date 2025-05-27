@@ -1,2 +1,1 @@
-react-app-template Репозиторій для зручного створення нового проекту на основі
-React
+Learn Lingo
