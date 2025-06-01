@@ -35,9 +35,9 @@ export const Teachers = () => {
           </li>
         </ul>
       </div>
-      <div>
-        <TeacherCard />
-      </div>
+
+      <TeacherCard />
+      <button>Load more</button>
     </div>
   );
 };

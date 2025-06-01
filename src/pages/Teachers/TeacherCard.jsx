@@ -56,7 +56,7 @@ export const TeacherCard = () => {
         <ul>
           <button></button>
         </ul>
-        <button></button>
+        <button>Book trial lesson</button>
       </div>
     </div>
   );
