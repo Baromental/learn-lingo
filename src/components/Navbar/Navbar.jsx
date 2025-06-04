@@ -1,21 +1,26 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router';
+import { NavLink } from 'react-router';
+import s from './Navbar.module.css';
 
 export const Navbar = () => {
   return (
-    <div>
-      <Link>
+    <div className={s.container}>
+      <NavLink className={s.logo} to="/">
         <span></span>LearnLingo
-      </Link>
-      <div>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/teachers">Teachers</NavLink>
+      </NavLink>
+      <div className={s.linksContainer}>
+        <NavLink className={s.link} to="/">
+          Home
+        </NavLink>
+        <NavLink className={s.link} to="/teachers">
+          Teachers
+        </NavLink>
       </div>
-      <div>
-        <button>
+      <div className={s.buttonsContainer}>
+        <button className={s.logButton}>
           <span></span>Log in
         </button>
-        <button>Registration</button>
+        <button className={s.regButton}>Registration</button>
       </div>
     </div>
   );

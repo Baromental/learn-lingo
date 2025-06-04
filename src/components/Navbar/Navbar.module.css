@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -2%;
+  color: #121417;
+}
+
+.linksContainer {
+  display: flex;
+  gap: 28px;
+}
+
+.link {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #121417;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 16px;
+}
+
+.logButton {
+  border-style: none;
+  background: none;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+}
+
+.regButton {
+  padding: 14px 39px;
+  background-color: #121417;
+  border-radius: 12px;
+  border-style: none;
+  color: #ffffff;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+}
