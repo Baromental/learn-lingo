@@ -34,7 +34,6 @@
 }
 
 .logButton {
-  border-style: none;
   background: none;
   font-family: Roboto;
   font-weight: 700;
@@ -47,7 +46,6 @@
   padding: 14px 39px;
   background-color: #121417;
   border-radius: 12px;
-  border-style: none;
   color: #ffffff;
   font-family: Roboto;
   font-weight: 700;

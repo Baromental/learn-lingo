@@ -1,5 +1,7 @@
 import React from 'react';
-import s from './Home.modules.css';
+import s from './Home.module.css';
+import face from '../../images/face.png';
+import mac from '../../images/mac.png';
 
 export const Home = () => {
   return (
@@ -7,7 +9,8 @@ export const Home = () => {
       <div className={s.parImgContainer}>
         <div className={s.parContainer}>
           <h1 className={s.header}>
-            Unlock your potential with the best<span>language</span>tutors
+            Unlock your potential with the best{' '}
+            <span className={s.span}>language</span> tutors
           </h1>
           <p className={s.paragraph}>
             Embark on an Exciting Language Journey with Expert Language Tutors:
@@ -16,25 +19,26 @@ export const Home = () => {
           </p>
           <button className={s.button}>Get started</button>
         </div>
-        <div>
-          <img src="" alt="" />
+        <div className={s.imgContainer}>
+          <img className={s.head} src={face} alt="face" />
+          <img className={s.mac} src={mac} alt="mac" />
         </div>
       </div>
       <div className={s.listContainer}>
-        <ul>
-          <li>
+        <ul className={s.list}>
+          <li className={s.listItem}>
             <p className={s.digit}>32,000 +</p>
             <p className={s.text}>Experienced tutors</p>
           </li>
-          <li>
+          <li className={s.listItem}>
             <p className={s.digit}>300,000 +</p>
             <p className={s.text}>5-star tutor reviews</p>
           </li>
-          <li>
+          <li className={s.listItem}>
             <p className={s.digit}>120 +</p>
             <p className={s.text}>Subjects taught</p>
           </li>
-          <li>
+          <li className={s.listItem}>
             <p className={s.digit}>200 +</p>
             <p className={s.text}>Tutor nationalities</p>
           </li>

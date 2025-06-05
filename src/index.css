@@ -13,12 +13,21 @@ code {
     monospace;
 }
 
+h1 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
 a {
   text-decoration: none;
 }
 ul,
 ol {
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 html {
@@ -37,6 +46,11 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+button {
+  border-style: none;
+  cursor: pointer;
 }
 
 /* .active {
