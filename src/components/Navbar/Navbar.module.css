@@ -12,6 +12,8 @@
   line-height: 24px;
   letter-spacing: -2%;
   color: #121417;
+  display: flex;
+  gap: 8px;
 }
 
 .linksContainer {
@@ -40,6 +42,14 @@
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
 }
 
 .regButton {
