@@ -1,7 +1,13 @@
 import React from 'react';
 import { TeacherCard } from './TeacherCard';
+import { useSelector } from 'react-redux';
+import { selectTeachers } from '../../redux/teachers/slice';
 
 export const Teachers = () => {
+  const teachers = useSelector(selectTeachers);
+
+  console.log(teachers);
+
   return (
     <div>
       <div>
