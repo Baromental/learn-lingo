@@ -31,5 +31,4 @@ const slice = createSlice({
 });
 
 export const teachersReducer = slice.reducer;
-// export const { fetchTeachersThunk } = slice.actions;
 export const { selectTeachers } = slice.selectors;

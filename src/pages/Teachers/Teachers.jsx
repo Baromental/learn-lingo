@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { TeacherCard } from './TeacherCard';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { selectTeachers } from '../../redux/teachers/slice';
+import { fetchTeachersThunk } from '../../redux/teachers/operations';
 
 export const Teachers = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchTeachersThunk());
+  }, [dispatch]);
+
   const teachers = useSelector(selectTeachers);
 
   console.log(teachers);
@@ -41,8 +48,7 @@ export const Teachers = () => {
           </li>
         </ul>
       </div>
-
-      <TeacherCard />
+      <TeacherCard teachers={teachers} />
       <button>Load more</button>
     </div>
   );
