@@ -1,63 +1,80 @@
 import React from 'react';
+import star from '../../images/star.svg';
+import heart from '../../images/heart.svg';
 
-export const TeacherCard = () => {
+export const TeacherCard = ({ teachers }) => {
   return (
     <div>
-      <div>
-        <img src="" alt="" />
-      </div>
-      <div>
-        <div>
-          <div>
-            <p>Languages</p>
-            <p>Name</p>
-          </div>
-          <div>
-            <ul>
-              <li>
-                <i></i>
-                Lessons online
-              </li>
-              <li>Lessons done: </li>
-              <li>
-                <i></i>
-                Rating:
-              </li>
-              <li>
-                Price / 1 hour: <span></span>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <button></button>
-          </div>
-        </div>
-        <div>
-          <ul>
-            <li>Speaks:</li>
-            <li>Lesson Info:</li>
-            <li>Conditions:</li>
-          </ul>
-        </div>
-        <p></p>
-        <ul>
-          <li>
+      <ul>
+        {teachers.map(teacher => (
+          <li key={teacher.index}>
             <div>
-              <img src="" alt="" />
+              <img src={teacher.avatar_url} alt="" />
+            </div>
+            <div>
               <div>
-                <p></p>
-                <p>
-                  <i></i>
-                </p>
+                <div>
+                  <p>Languages</p>
+                  <p>
+                    {teacher.name} {teacher.surname}
+                  </p>
+                </div>
+                <div>
+                  <ul>
+                    <li>
+                      <i></i>
+                      Lessons online
+                    </li>
+                    <li>Lessons done: {teacher.lessons_done} </li>
+                    <li>
+                      <img src={star} alt="star"></img>
+                      Rating: {teacher.rating}
+                    </li>
+                    <li>
+                      Price / 1 hour: <span>{teacher.price_per_hour}$</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <button>
+                    <img src={heart} alt="heart" />
+                  </button>
+                </div>
               </div>
+              <div>
+                <ul>
+                  <li>Speaks: {teacher.languages.join(', ')}</li>
+                  <li>Lesson Info: {teacher.lesson_info}</li>
+                  <li>Conditions: {teacher.conditions.join(' ')}</li>
+                </ul>
+              </div>
+              <p></p>
+              <ul>
+                <li>
+                  <div>
+                    <img src="" alt="" />
+                    <div>
+                      <p></p>
+                      <p>
+                        <i></i>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <button>Read more</button>
+              <ul>
+                {teacher.levels.map(level => (
+                  <li>
+                    <button>{level}</button>
+                  </li>
+                ))}
+              </ul>
+              <button>Book trial lesson</button>
             </div>
           </li>
-        </ul>
-        <ul>
-          <button></button>
-        </ul>
-        <button>Book trial lesson</button>
-      </div>
+        ))}
+      </ul>
     </div>
   );
 };
