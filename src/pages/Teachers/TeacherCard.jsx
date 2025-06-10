@@ -45,37 +45,45 @@ export const TeacherCard = ({ teachers }) => {
                 </div>
               </div>
               <ul className={s.listInfo}>
-                <li>Speaks: {teacher.languages.join(', ')}</li>
-                <li>Lesson Info: {teacher.lesson_info}</li>
-                <li>Conditions: {teacher.conditions.join(' ')}</li>
+                <li>
+                  <span className={s.listInfoSpan}>Speaks:</span>{' '}
+                  <span className={s.listInfoItemLanguage}>
+                    {teacher.languages.join(', ')}
+                  </span>
+                </li>
+                <li>
+                  <span className={s.listInfoSpan}>Lesson Info:</span>{' '}
+                  {teacher.lesson_info}
+                </li>
+                <li>
+                  <span className={s.listInfoSpan}>Conditions:</span>{' '}
+                  {teacher.conditions.join(' ')}
+                </li>
               </ul>
-              <button>Read more</button>
-              <p>{teacher.experience}</p>
-              <ul>
-                reviews
+              <button className={s.readMore}>Read more</button>
+              <p className={s.paragraph}>{teacher.experience}</p>
+              <ul className={s.listReviews}>
                 {teacher.reviews.map(review => (
-                  <li>
-                    <div>
-                      <div>
-                        <p>{review.reviewer_name}</p>
-                        <p>
-                          <img src={star} alt="star"></img>
-                          {review.reviewer_rating}
-                        </p>
-                      </div>
-                      <p>{review.comment}</p>
+                  <li className={s.listItemReviews}>
+                    <div className={s.containerReviewName}>
+                      <p className={s.reviewName}>{review.reviewer_name}</p>
+                      <p className={s.reviewMark}>
+                        <img src={star} alt="star"></img>
+                        {review.reviewer_rating}
+                      </p>
                     </div>
+                    <p className={s.reviewText}>{review.comment}</p>
                   </li>
                 ))}
               </ul>
-              <ul>
+              <ul className={s.btnList}>
                 {teacher.levels.map(level => (
                   <li>
-                    <button>{level}</button>
+                    <button className={s.btnLevel}>{level}</button>
                   </li>
                 ))}
               </ul>
-              <button>Book trial lesson</button>
+              <button className={s.btnBook}>Book trial lesson</button>
             </div>
           </li>
         ))}

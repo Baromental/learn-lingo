@@ -52,6 +52,7 @@ img {
 button {
   border-style: none;
   cursor: pointer;
+  padding: 0;
 }
 
 .active {

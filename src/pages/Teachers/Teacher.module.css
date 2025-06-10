@@ -118,5 +118,147 @@
 .listInfo {
   margin-top: 32px;
   display: flex;
+  flex-direction: column;
   gap: 8px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #121417;
+}
+
+.listInfoItemLanguage {
+  text-decoration: underline;
+}
+
+.listInfoSpan {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #8a8a89;
+}
+
+.readMore {
+  margin-top: 16px;
+  background: none;
+  text-decoration: underline;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #121417;
+}
+
+.paragraph {
+  margin-top: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #121417;
+}
+
+.listItemReviews {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.listReviews {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.containerReviewName {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.reviewName {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #8a8a89;
+}
+
+.reviewMark {
+  display: flex;
+  gap: 8px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #121417;
+}
+
+.reviewText {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #121417;
+}
+
+.btnList {
+  margin-top: 32px;
+  display: flex;
+  gap: 8px;
+}
+
+.btnLevel {
+  background: none;
+  border: solid 1px #12141733;
+  padding: 8px 12px;
+  border-radius: 35px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #121417;
+}
+
+.btnLevel:hover {
+  background-color: #cbded3;
+}
+
+.btnLevel:focus {
+  background-color: #9fbaae;
+  border: none;
+}
+
+.btnBook {
+  margin-top: 32px;
+  padding: 16px 48px;
+  border-radius: 12px;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  background-color: #9fbaae;
+}
+
+.btnBook:hover {
+  background-color: #cbded3;
 }
