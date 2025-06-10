@@ -48,21 +48,25 @@ export const TeacherCard = ({ teachers }) => {
                   <li>Conditions: {teacher.conditions.join(' ')}</li>
                 </ul>
               </div>
-              <p></p>
-              <ul>
-                <li>
-                  <div>
-                    <img src="" alt="" />
-                    <div>
-                      <p></p>
-                      <p>
-                        <i></i>
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              </ul>
               <button>Read more</button>
+              <p>{teacher.experience}</p>
+              <ul>
+                reviews
+                {teacher.reviews.map(review => (
+                  <li>
+                    <div>
+                      <div>
+                        <p>{review.reviewer_name}</p>
+                        <p>
+                          <img src={star} alt="star"></img>
+                          {review.reviewer_rating}
+                        </p>
+                      </div>
+                      <p>{review.comment}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
               <ul>
                 {teacher.levels.map(level => (
                   <li>
