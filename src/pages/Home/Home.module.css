@@ -13,7 +13,7 @@
 .parContainer {
   display: flex;
   flex-direction: column;
-  background-color: #f8f8f8;
+  background-color: #ffffff;
   border-radius: 30px;
   padding: 98px 108px 98px 64px;
   align-items: flex-start;

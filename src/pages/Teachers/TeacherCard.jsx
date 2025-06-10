@@ -1,53 +1,54 @@
 import React from 'react';
 import star from '../../images/star.svg';
 import heart from '../../images/heart.svg';
+import book from '../../images/book.svg';
+import s from './Teacher.module.css';
 
 export const TeacherCard = ({ teachers }) => {
   return (
-    <div>
-      <ul>
+    <div className={s.containerCard}>
+      <ul className={s.listCard}>
         {teachers.map(teacher => (
-          <li key={teacher.index}>
+          <li className={s.listItemCard}>
             <div>
-              <img src={teacher.avatar_url} alt="" />
+              <img className={s.avatar} src={teacher.avatar_url} alt="" />
             </div>
             <div>
-              <div>
+              <div className={s.containerUpperCard}>
                 <div>
-                  <p>Languages</p>
-                  <p>
+                  <p className={s.languages}>Languages</p>
+                  <p className={s.name}>
                     {teacher.name} {teacher.surname}
                   </p>
                 </div>
                 <div>
-                  <ul>
-                    <li>
-                      <i></i>
+                  <ul className={s.containerUpperInfoCard}>
+                    <li className={s.itemIcon}>
+                      <img className={s.upperIcon} src={book} alt="book"></img>
                       Lessons online
                     </li>
                     <li>Lessons done: {teacher.lessons_done} </li>
-                    <li>
-                      <img src={star} alt="star"></img>
+                    <li className={s.itemIcon}>
+                      <img className={s.upperIcon} src={star} alt="star"></img>
                       Rating: {teacher.rating}
                     </li>
                     <li>
-                      Price / 1 hour: <span>{teacher.price_per_hour}$</span>
+                      Price / 1 hour:{' '}
+                      <span className={s.price}>{teacher.price_per_hour}$</span>
                     </li>
                   </ul>
                 </div>
                 <div>
-                  <button>
+                  <button className={s.heart}>
                     <img src={heart} alt="heart" />
                   </button>
                 </div>
               </div>
-              <div>
-                <ul>
-                  <li>Speaks: {teacher.languages.join(', ')}</li>
-                  <li>Lesson Info: {teacher.lesson_info}</li>
-                  <li>Conditions: {teacher.conditions.join(' ')}</li>
-                </ul>
-              </div>
+              <ul className={s.listInfo}>
+                <li>Speaks: {teacher.languages.join(', ')}</li>
+                <li>Lesson Info: {teacher.lesson_info}</li>
+                <li>Conditions: {teacher.conditions.join(' ')}</li>
+              </ul>
               <button>Read more</button>
               <p>{teacher.experience}</p>
               <ul>

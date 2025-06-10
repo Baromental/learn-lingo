@@ -6,6 +6,7 @@ body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f8f8;
 }
 
 code {
@@ -53,7 +54,6 @@ button {
   cursor: pointer;
 }
 
-/* .active {
-  color: antiquewhite !important;
-  text-decoration: underline !important;
-} */
+.active {
+  color: #9fbaae !important;
+}

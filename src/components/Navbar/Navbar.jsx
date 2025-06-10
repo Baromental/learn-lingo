@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import flag from '../../images/flag.svg';
 import login from '../../images/login.svg';
 
@@ -8,9 +8,9 @@ import s from './Navbar.module.css';
 export const Navbar = () => {
   return (
     <div className={s.container}>
-      <NavLink className={s.logo} to="/">
+      <Link className={s.logo} to="/">
         <img src={flag} alt="flag"></img>LearnLingo
-      </NavLink>
+      </Link>
       <div className={s.linksContainer}>
         <NavLink className={s.link} to="/">
           Home
