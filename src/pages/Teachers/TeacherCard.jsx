@@ -9,9 +9,13 @@ export const TeacherCard = ({ teachers }) => {
     <div className={s.containerCard}>
       <ul className={s.listCard}>
         {teachers.map(teacher => (
-          <li className={s.listItemCard}>
-            <div>
-              <img className={s.avatar} src={teacher.avatar_url} alt="" />
+          <li key={teacher.avatar_url} className={s.listItemCard}>
+            <div className={s.avatarContainer}>
+              <img
+                className={s.avatar}
+                src={teacher.avatar_url}
+                alt={`Avatar of ${teacher.name}`}
+              />
             </div>
             <div>
               <div className={s.containerUpperCard}>
