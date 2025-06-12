@@ -24,6 +24,9 @@
 }
 
 .select {
+  padding: 14px 30px 14px 18px;
+  border: none;
+  border-radius: 14px;
   font-family: Roboto;
   font-weight: 500;
   font-size: 18px;
@@ -31,6 +34,12 @@
   letter-spacing: 0%;
   vertical-align: middle;
   color: #121417;
+  appearance: none;
+
+  background-image: url('../../images/arrow.svg'); /* або data:image/svg+xml,... */
+  background-repeat: no-repeat;
+  background-position: right 12px center; /* 👈 відступ стрілки від краю */
+  background-size: 10px;
 }
 
 .containerCard {
@@ -59,8 +68,6 @@
   width: 96px;
   height: 96px;
   border-radius: 100px;
-  /* object-fit: cover;
-  aspect-ratio: 1; */
 }
 
 .containerUpperCard {

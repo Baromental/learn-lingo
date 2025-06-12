@@ -48,10 +48,10 @@ export const Teachers = () => {
               Price
             </label>
             <select className={s.select} name="price" id="price">
-              <option value="">10</option>
-              <option value="">20</option>
-              <option value="">30</option>
-              <option value="">40</option>
+              <option value="">10 $</option>
+              <option value="">20 $</option>
+              <option value="">30 $</option>
+              <option value="">40 $</option>
             </select>
           </li>
         </ul>
