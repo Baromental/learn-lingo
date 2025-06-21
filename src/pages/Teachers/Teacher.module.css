@@ -2,9 +2,16 @@
   margin-top: 20px;
 }
 
+.selectContainer {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: flex-end;
+}
+
 .listSelect {
   display: flex;
-  gap: 100px;
+  gap: 50px;
   justify-content: center;
 }
 
@@ -40,6 +47,28 @@
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 10px;
+}
+
+.btnReset {
+  padding: 14px 30px;
+  border: none;
+  border-radius: 14px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  background-color: #9fbaae;
+}
+
+.btnReset:hover {
+  background-color: #cbded3;
+}
+
+.notFoundTitle {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
 }
 
 .containerCard {

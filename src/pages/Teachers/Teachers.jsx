@@ -40,19 +40,25 @@ export const Teachers = () => {
     });
   };
 
+  const handleResetFilters = () => {
+    setFilters({ language: '', level: '', price: '' });
+    setDisplayCount(4);
+  };
+
   const handleLoadMore = () => {
     setDisplayCount(prev => prev + 4);
   };
 
   return (
     <div className={s.container}>
-      <div>
+      <div className={s.selectContainer}>
         <ul className={s.listSelect}>
           <li className={s.listItemSelect}>
             <label className={s.labelSelect} htmlFor="languages">
               Languages
             </label>
             <select
+              value={filters.language}
               onChange={e =>
                 setFilters(prev => ({ ...prev, language: e.target.value }))
               }
@@ -60,6 +66,7 @@ export const Teachers = () => {
               name="languages"
               id="languages"
             >
+              <option value="">All</option>
               <option value="English">English</option>
               <option value="French">French</option>
               <option value="German">German</option>
@@ -76,6 +83,7 @@ export const Teachers = () => {
               Level of knowledge
             </label>
             <select
+              value={filters.level}
               onChange={e =>
                 setFilters(prev => ({ ...prev, level: e.target.value }))
               }
@@ -83,6 +91,7 @@ export const Teachers = () => {
               name="level"
               id="level"
             >
+              <option value="">All</option>
               <option value="A1 Beginner">A1 Beginner</option>
               <option value="A2 Elementary">A2 Elementary</option>
               <option value="B1 Intermediate">B1 Intermediate</option>
@@ -98,6 +107,7 @@ export const Teachers = () => {
               Price
             </label>
             <select
+              value={filters.price}
               onChange={e =>
                 setFilters(prev => ({ ...prev, price: e.target.value }))
               }
@@ -105,6 +115,7 @@ export const Teachers = () => {
               name="price"
               id="price"
             >
+              <option value="">All</option>
               <option value="25">25 $</option>
               <option value="30">30 $</option>
               <option value="35">35 $</option>
@@ -112,6 +123,9 @@ export const Teachers = () => {
             </select>
           </li>
         </ul>
+        <button onClick={handleResetFilters} className={s.btnReset}>
+          Reset filters
+        </button>
       </div>
       <TeacherCard teachers={visibleTeachers} />
       {visibleTeachers.length < handleFilter(teachers, filters).length && (

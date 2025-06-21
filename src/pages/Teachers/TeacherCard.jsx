@@ -5,11 +5,17 @@ import s from './Teacher.module.css';
 export const TeacherCard = ({ teachers }) => {
   return (
     <div className={s.containerCard}>
-      <ul className={s.listCard}>
-        {teachers.map(teacher => (
-          <TeacherCardItem key={teacher.avatar_url} teacher={teacher} />
-        ))}
-      </ul>
+      {teachers.length ? (
+        <ul className={s.listCard}>
+          {teachers.map(teacher => (
+            <TeacherCardItem key={teacher.avatar_url} teacher={teacher} />
+          ))}
+        </ul>
+      ) : (
+        <h2 className={s.notFoundTitle}>
+          Sorry! No teacher was found according to the selected filter.
+        </h2>
+      )}
     </div>
   );
 };
