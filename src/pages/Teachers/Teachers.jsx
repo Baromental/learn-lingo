@@ -63,7 +63,12 @@ export const Teachers = () => {
               <option value="English">English</option>
               <option value="French">French</option>
               <option value="German">German</option>
+              <option value="Italian">Italian</option>
               <option value="Spanish">Spanish</option>
+              <option value="Korean">Korean</option>
+              <option value="Vietnamese">Vietnamese</option>
+
+              <option value="Mandarin Chinese">Mandarin Chinese</option>
             </select>
           </li>
           <li className={s.listItemSelect}>
