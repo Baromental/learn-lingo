@@ -3,13 +3,25 @@ import star from '../../images/star.svg';
 import heart from '../../images/heart.svg';
 import book from '../../images/book.svg';
 import s from './Teacher.module.css';
+import { BookForm } from 'components/Forms/BookForm/BookForm';
+import { Modal } from 'components/Modal/Modal';
 
 export const TeacherCardItem = ({ teacher }) => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+
   const handleToggleButton = () => {
     setIsOpen(!isOpen);
     return console.log(isOpen);
   };
+
+  const handleOpenModal = () => {
+    setIsOpenModal(prev => true);
+  };
+  const handleCloseModal = () => {
+    setIsOpenModal(prev => false);
+  };
+
   return (
     <li key={teacher.avatar_url} className={s.listItemCard}>
       <div className={s.avatarContainer}>
@@ -95,7 +107,14 @@ export const TeacherCardItem = ({ teacher }) => {
             </li>
           ))}
         </ul>
-        <button className={s.btnBook}>Book trial lesson</button>
+        <button onClick={handleOpenModal} className={s.btnBook}>
+          Book trial lesson
+        </button>
+        {isOpenModal && (
+          <Modal onClose={handleCloseModal}>
+            <BookForm />
+          </Modal>
+        )}
       </div>
     </li>
   );
