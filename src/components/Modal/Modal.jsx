@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import cross from '../../images/cross.svg';
+import { ReactComponent as CrossIcon } from '../../images/cross.svg';
 
 import s from './Modal.module.css';
 
@@ -25,9 +25,8 @@ export const Modal = ({ onClose, children }) => {
   return (
     <div onClick={handleBackdropClick} className={s.overlay}>
       <div className={s.modalContent}>
-        <button onClick={onClose}>
-          <img src={cross} alt="cross" />
-        </button>
+        <CrossIcon onClick={onClose} className={s.icon} />
+
         <div>{children}</div>
       </div>
     </div>

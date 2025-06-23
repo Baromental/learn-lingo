@@ -112,7 +112,7 @@ export const TeacherCardItem = ({ teacher }) => {
         </button>
         {isOpenModal && (
           <Modal onClose={handleCloseModal}>
-            <BookForm />
+            <BookForm teacher={teacher} />
           </Modal>
         )}
       </div>
