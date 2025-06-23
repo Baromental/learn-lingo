@@ -1,0 +1,150 @@
+.bookModal {
+  padding: 64px;
+}
+
+.title {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -2%;
+  color: #121417;
+}
+
+.text {
+  margin-top: 20px;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0%;
+  color: #121417cc;
+}
+
+.teacherContainer {
+  display: flex;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 100px;
+}
+
+.teacherNameContainer {
+}
+
+.label {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #8a8a89;
+}
+
+.name {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #121417;
+}
+
+.containerRadio {
+  margin-top: 40px;
+  padding: 0;
+  border: none;
+}
+
+.legend {
+  margin-bottom: 20px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #121417;
+}
+
+.radioInputContainer {
+  display: flex;
+  gap: 8px;
+}
+
+.inputRadio {
+  color: #9fbaae;
+}
+
+input[type='radio'] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: border 0.2s ease;
+}
+
+input[type='radio']:checked {
+  border-color: #cbded3;
+  background-color: white;
+}
+
+input[type='radio']:checked::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 8px;
+  height: 8px;
+  background-color: #cbded3;
+  border-radius: 50%;
+}
+
+.labelRadio {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #121417;
+}
+
+.containerInputText {
+  margin-top: 40px;
+  display: flex;
+  gap: 18px;
+  flex-direction: column;
+}
+
+.inputText {
+  border: 1px solid #1214171a;
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.btnBook {
+  width: 100%;
+  margin-top: 40px;
+  padding: 16px 16px;
+  border-radius: 12px;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  background-color: #9fbaae;
+}
+
+.btnBook:hover {
+  background-color: #cbded3;
+}
