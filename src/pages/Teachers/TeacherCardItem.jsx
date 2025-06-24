@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import star from '../../images/star.svg';
-import heart from '../../images/heart.svg';
-import book from '../../images/book.svg';
-import s from './Teacher.module.css';
+import { ReactComponent as StarIcon } from '../../images/star.svg';
+import { ReactComponent as HeartIcon } from '../../images/heart.svg';
+import { ReactComponent as BookIcon } from '../../images/book.svg';
 import { BookForm } from 'components/Forms/BookForm/BookForm';
 import { Modal } from 'components/Modal/Modal';
+import s from './Teacher.module.css';
 
 export const TeacherCardItem = ({ teacher }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -42,12 +42,12 @@ export const TeacherCardItem = ({ teacher }) => {
           <div>
             <ul className={s.containerUpperInfoCard}>
               <li className={s.itemIcon}>
-                <img className={s.upperIcon} src={book} alt="book"></img>
+                <BookIcon className={s.upperIcon} />
                 Lessons online
               </li>
               <li>Lessons done: {teacher.lessons_done} </li>
               <li className={s.itemIcon}>
-                <img className={s.upperIcon} src={star} alt="star"></img>
+                <StarIcon className={s.upperIcon} />
                 Rating: {teacher.rating}
               </li>
               <li>
@@ -58,7 +58,7 @@ export const TeacherCardItem = ({ teacher }) => {
           </div>
           <div>
             <button className={s.heart}>
-              <img src={heart} alt="heart" />
+              <HeartIcon className={s.heartIcon} />
             </button>
           </div>
         </div>
@@ -87,7 +87,7 @@ export const TeacherCardItem = ({ teacher }) => {
                   <div className={s.containerReviewName}>
                     <p className={s.reviewName}>{review.reviewer_name}</p>
                     <p className={s.reviewMark}>
-                      <img src={star} alt="star"></img>
+                      <StarIcon />
                       {review.reviewer_rating}
                     </p>
                   </div>

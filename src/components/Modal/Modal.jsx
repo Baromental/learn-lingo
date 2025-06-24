@@ -26,7 +26,6 @@ export const Modal = ({ onClose, children }) => {
     <div onClick={handleBackdropClick} className={s.overlay}>
       <div className={s.modalContent}>
         <CrossIcon onClick={onClose} className={s.icon} />
-
         <div>{children}</div>
       </div>
     </div>
