@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ReactComponent as StarIcon } from '../../images/star.svg';
 import { ReactComponent as HeartIcon } from '../../images/heart.svg';
 import { ReactComponent as BookIcon } from '../../images/book.svg';
-import { BookForm } from 'components/Forms/BookForm/BookForm';
+import { BookForm } from 'components/Forms/BookForm';
 import { Modal } from 'components/Modal/Modal';
 import s from './Teacher.module.css';
 
