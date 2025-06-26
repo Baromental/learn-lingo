@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://Baromental.github.io/learn-lingo/",
   "dependencies": {
+    "@hookform/resolvers": "^5.1.1",
     "@reduxjs/toolkit": "^2.8.2",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",

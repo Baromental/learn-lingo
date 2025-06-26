@@ -4,14 +4,13 @@ import { PasswordInputField } from './PasswordInputField';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-export const AuthForm = ({ onDataSubmit, formType, values, schema }) => {
+export const AuthForm = ({ onDataSubmit, formType, schema }) => {
   const {
     register,
     reset,
     handleSubmit,
     formState: { errors },
   } = useForm({
-    defaultValues: values,
     resolver: yupResolver(schema),
   });
 
