@@ -5,12 +5,12 @@ export const PasswordInputField = ({ register, errors, name, placeholder }) => {
   const [type, setType] = useState('password');
   return (
     <div>
-      {/* <input
+      <input
         id={name}
         placeholder={placeholder}
         {...register(name)}
         type={type}
-      /> */}
+      />
       <button
         type="button"
         onClick={() => setType(type === 'password' ? 'text' : 'password')}
