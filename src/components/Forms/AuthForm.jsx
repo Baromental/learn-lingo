@@ -57,7 +57,9 @@ export const AuthForm = ({ onDataSubmit, formType, schema }) => {
             name="password"
           />
         </div>
-        <button>{formType === 'register' ? 'Sign Up' : 'Log In'}</button>
+        <button className={s.btnConfirm}>
+          {formType === 'register' ? 'Sign Up' : 'Log In'}
+        </button>
       </form>
     </div>
   );

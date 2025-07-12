@@ -130,14 +130,30 @@ input[type='radio']:checked::before {
   border-radius: 12px;
   padding: 16px 18px;
 }
-
+.containerPassword {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
 .inputPassword {
+  flex: 1;
   border: 1px solid #1214171a;
   border-radius: 12px;
   padding: 16px 18px;
 }
 
-.btnBook {
+.iconBtn {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.btnConfirm {
   width: 100%;
   margin-top: 40px;
   padding: 16px 16px;

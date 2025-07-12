@@ -94,7 +94,7 @@ export const BookForm = ({ teacher }) => {
           />
         </div>
       </form>
-      <button className={s.btnBook}>Book</button>
+      <button className={s.btnConfirm}>Book</button>
     </div>
   );
 };
