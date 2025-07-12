@@ -1,4 +1,4 @@
-.bookModal {
+.modal {
   padding: 64px;
 }
 
@@ -126,6 +126,12 @@ input[type='radio']:checked::before {
 }
 
 .inputText {
+  border: 1px solid #1214171a;
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.inputPassword {
   border: 1px solid #1214171a;
   border-radius: 12px;
   padding: 16px 18px;

@@ -4,6 +4,8 @@ import { PasswordInputField } from './PasswordInputField';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
+import s from './BookForm.module.css';
+
 export const AuthForm = ({ onDataSubmit, formType, schema }) => {
   const {
     register,
@@ -20,28 +22,41 @@ export const AuthForm = ({ onDataSubmit, formType, schema }) => {
   };
 
   return (
-    <div>
+    <div className={s.modal}>
+      <h2 className={s.title}>
+        {formType === 'register' ? 'Register' : 'Log In'}
+      </h2>
+      <p className={s.text}>
+        {formType === 'register'
+          ? 'Thank you for your interest in our platform! In order to register, we need some information. Please provide us with the following information'
+          : 'Welcome back! Please enter your credentials to access your account and continue your search for an teacher.'}
+      </p>
       <form onSubmit={handleSubmit(submit)}>
-        {formType === 'register' && (
+        <div className={s.containerInputText}>
+          {formType === 'register' && (
+            <InputField
+              className={s.inputText}
+              register={register}
+              errors={errors}
+              placeholder="Name"
+              name="name"
+            />
+          )}
           <InputField
+            className={s.inputText}
             register={register}
             errors={errors}
-            placeholder="Name"
-            name="name"
+            placeholder="Email"
+            name="email"
           />
-        )}
-        <InputField
-          register={register}
-          errors={errors}
-          placeholder="Email"
-          name="email"
-        />
-        <PasswordInputField
-          register={register}
-          errors={errors}
-          placeholder="Password"
-          name="password"
-        />
+          <PasswordInputField
+            className={s.inputText}
+            register={register}
+            errors={errors}
+            placeholder="Password"
+            name="password"
+          />
+        </div>
         <button>{formType === 'register' ? 'Sign Up' : 'Log In'}</button>
       </form>
     </div>

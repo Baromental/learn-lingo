@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
+import s from './BookForm.module.css';
+
 export const PasswordInputField = ({ register, errors, name, placeholder }) => {
   const [type, setType] = useState('password');
   return (
-    <div>
+    <>
       <input
+        className={s.inputPassword}
         id={name}
         placeholder={placeholder}
         {...register(name)}
@@ -17,6 +20,6 @@ export const PasswordInputField = ({ register, errors, name, placeholder }) => {
       >
         {type === 'password' ? <FaEyeSlash /> : <FaEye />}
       </button>
-    </div>
+    </>
   );
 };
