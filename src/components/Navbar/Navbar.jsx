@@ -50,6 +50,11 @@ export const Navbar = () => {
         <NavLink className={s.link} to="/teachers">
           Teachers
         </NavLink>
+        {isLoggedIn && (
+          <NavLink className={s.link} to="/favorites">
+            Favorites
+          </NavLink>
+        )}
       </div>
       {isLoggedIn ? (
         <div>
