@@ -25,6 +25,7 @@ export const Navbar = () => {
   const handleRegister = data => {
     dispatch(registerThunk(data));
   };
+
   return (
     <div className={s.container}>
       <Link className={s.logo} to="/">
