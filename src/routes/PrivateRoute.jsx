@@ -9,5 +9,5 @@ export const PrivateRoute = ({ children }) => {
   if (isLoggedIn) {
     return children;
   }
-  return <Navigate state={{ from: location }} to="/login" />;
+  return <Navigate state={{ from: location }} to="/" />;
 };
