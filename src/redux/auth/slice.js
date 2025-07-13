@@ -24,7 +24,6 @@ const authSlice = createSlice({
       .addMatcher(
         isAnyOf(registerThunk.fulfilled, loginThunk.fulfilled),
         (state, { payload }) => {
-          console.log('FULFILLED PAYLOAD:', payload);
           state.loading = false;
           state.isLoggedIn = true;
           state.user.name = payload.displayName;

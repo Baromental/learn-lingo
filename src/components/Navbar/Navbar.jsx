@@ -34,7 +34,7 @@ export const Navbar = () => {
   };
 
   const handleLogout = () => {
-    dispatch(logoutThunk);
+    dispatch(logoutThunk());
   };
 
   return (
