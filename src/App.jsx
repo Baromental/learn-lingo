@@ -12,14 +12,14 @@ const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="/teachers" element={<Teachers />} />
-        <Route
+        {/* <Route
           path="/favorites"
           element={
             <PrivateRoute>
               <Favorites />
             </PrivateRoute>
           }
-        />
+        /> */}
       </Route>
     </Routes>
   );
