@@ -10,7 +10,10 @@ export const fetchTeachersThunk = createAsyncThunk(
     try {
       const snapshot = await get(teachersRef);
       const data = snapshot.val();
-      return data;
+      return Object.entries(data).map(([id, teacher]) => ({
+        id,
+        ...teacher,
+      }));
     } catch (error) {
       console.error('Error fetching teachers:', error);
       return thunkAPI.rejectWithValue(error.message);

@@ -8,7 +8,7 @@ export const TeacherCard = ({ teachers }) => {
       {teachers.length ? (
         <ul className={s.listCard}>
           {teachers.map(teacher => (
-            <TeacherCardItem key={teacher.avatar_url} teacher={teacher} />
+            <TeacherCardItem key={teacher.id} teacher={teacher} />
           ))}
         </ul>
       ) : (

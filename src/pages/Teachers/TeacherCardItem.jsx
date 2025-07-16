@@ -10,6 +10,8 @@ export const TeacherCardItem = ({ teacher }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
+  console.log(teacher);
+
   const handleToggleButton = () => {
     setIsOpen(!isOpen);
     return console.log(isOpen);
@@ -101,8 +103,8 @@ export const TeacherCardItem = ({ teacher }) => {
           {isOpen ? 'Close details' : 'Read more'}
         </button>
         <ul className={s.btnList}>
-          {teacher.levels.map(level => (
-            <li>
+          {teacher.levels.map((level, index) => (
+            <li key={index}>
               <button className={s.btnLevel}>{level}</button>
             </li>
           ))}
