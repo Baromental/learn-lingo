@@ -10,8 +10,6 @@ export const TeacherCardItem = ({ teacher }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(teacher);
-
   const handleToggleButton = () => {
     setIsOpen(!isOpen);
     return console.log(isOpen);
