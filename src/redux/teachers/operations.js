@@ -5,7 +5,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 const teachersRef = ref(db, 'teachers');
 
 export const fetchTeachersThunk = createAsyncThunk(
-  'fetchTeachers',
+  'teachers/fetch',
   async (_, thunkAPI) => {
     try {
       const snapshot = await get(teachersRef);
