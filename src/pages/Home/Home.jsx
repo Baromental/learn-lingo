@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Home.module.css';
 import face from '../../images/face.png';
 import mac from '../../images/mac.png';
+import { Link } from 'react-router';
 
 export const Home = () => {
   return (
@@ -17,7 +18,9 @@ export const Home = () => {
             Elevate your language proficiency to new heights by connecting with
             highly qualified and experienced tutors.
           </p>
-          <button className={s.button}>Get started</button>
+          <Link to="/teachers" className={s.button}>
+            Get started
+          </Link>
         </div>
         <div className={s.imgContainer}>
           <img className={s.head} src={face} alt="face" />
