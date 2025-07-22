@@ -1,4 +1,4 @@
-import { auth, db } from 'redux/firebase';
+import { auth, db } from '../firebase';
 import { ref, get, set, remove } from 'firebase/database';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
