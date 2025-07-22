@@ -9,7 +9,8 @@ export const fetchFavoritesThunk = createAsyncThunk(
     if (!uid) return {};
 
     const snapshot = await get(ref(db, `favorites/${uid}`));
-    return snapshot.val() || {};
+    const data = snapshot.val() || {};
+    return Object.keys(data);
   }
 );
 
