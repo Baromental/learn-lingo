@@ -1,14 +1,29 @@
 import React, { useState } from 'react';
 import { ReactComponent as StarIcon } from '../../images/star.svg';
 import { ReactComponent as HeartIcon } from '../../images/heart.svg';
+import { ReactComponent as FilledHeartIcon } from '../../images/filledHeart.svg';
 import { ReactComponent as BookIcon } from '../../images/book.svg';
 import { BookForm } from 'components/Forms/BookForm';
 import { Modal } from 'components/Modal/Modal';
 import s from './Teacher.module.css';
+import { useDispatch } from 'react-redux';
+import {
+  addToFavoritesThunk,
+  removeFromFavoritesThunk,
+} from '../../redux/favorites/operation';
 
-export const TeacherCardItem = ({ teacher }) => {
+export const TeacherCardItem = ({ teacher, isFavorite }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
+
+  const handleToggleFavorite = () => {
+    if (isFavorite) {
+      dispatch(removeFromFavoritesThunk(teacher.id));
+    } else {
+      dispatch(addToFavoritesThunk(teacher.id));
+    }
+  };
 
   const handleToggleButton = () => {
     setIsOpen(!isOpen);
@@ -57,8 +72,12 @@ export const TeacherCardItem = ({ teacher }) => {
             </ul>
           </div>
           <div>
-            <button className={s.heart}>
-              <HeartIcon className={s.heartIcon} />
+            <button onClick={handleToggleFavorite} className={s.heart}>
+              {isFavorite ? (
+                <FilledHeartIcon className={s.heartIcon} />
+              ) : (
+                <HeartIcon className={s.heartIcon} />
+              )}
             </button>
           </div>
         </div>
