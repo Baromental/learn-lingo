@@ -3,10 +3,13 @@ import { InputField } from './InputField';
 import { PasswordInputField } from './PasswordInputField';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useDispatch } from 'react-redux';
+import { loginThunk } from '../../redux/auth/operations';
+import { toast } from 'react-toastify';
 
 import s from './BookForm.module.css';
 
-export const AuthForm = ({ onDataSubmit, formType, schema }) => {
+export const AuthForm = ({ onDataSubmit, formType, schema, closeModal }) => {
   const {
     register,
     reset,
@@ -16,9 +19,25 @@ export const AuthForm = ({ onDataSubmit, formType, schema }) => {
     resolver: yupResolver(schema),
   });
 
-  const submit = data => {
-    onDataSubmit(data);
-    reset();
+  const dispatch = useDispatch();
+
+  const handleLogin = async data => {
+    try {
+      await dispatch(loginThunk(data)).unwrap();
+      closeModal();
+    } catch (error) {
+      toast.error('Login failed');
+    }
+  };
+
+  const submit = async data => {
+    try {
+      await onDataSubmit(data);
+      closeModal();
+      reset();
+    } catch (error) {
+      toast.error('Operation failed');
+    }
   };
 
   return (

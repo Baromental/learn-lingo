@@ -91,6 +91,7 @@ export const Navbar = () => {
               formType="login"
               schema={loginSchema}
               onDataSubmit={handleLogin}
+              closeModal={handleCloseModal}
             />
           )}
           {modalType === 'register' && (
@@ -98,6 +99,7 @@ export const Navbar = () => {
               formType="register"
               schema={registerSchema}
               onDataSubmit={handleRegister}
+              closeModal={handleCloseModal}
             />
           )}
         </Modal>
