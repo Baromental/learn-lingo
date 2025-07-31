@@ -16,11 +16,11 @@ export const Modal = ({ onClose, children }) => {
     };
   }, [onClose]);
 
-  const handleBackdropClick = e => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
+  // const handleBackdropClick = e => {
+  //   if (e.target === e.currentTarget) {
+  //     onClose();
+  //   }
+  // };
 
   return (
     <div onClick={handleBackdropClick} className={s.overlay}>
