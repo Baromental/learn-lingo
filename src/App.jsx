@@ -1,4 +1,5 @@
 import { Layout } from 'components/Navbar/Layout';
+import { useAuthListener } from 'helpers/authListener';
 import { Favorites } from 'pages/Favorites/Favorites';
 import { Home } from 'pages/Home/Home';
 import { Teachers } from 'pages/Teachers/Teachers';
@@ -7,6 +8,7 @@ import { Route, Routes } from 'react-router';
 import { PrivateRoute } from 'routes/PrivateRoute';
 
 const App = () => {
+  useAuthListener();
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
