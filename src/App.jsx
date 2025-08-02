@@ -1,14 +1,26 @@
 import { Layout } from 'components/Navbar/Layout';
-import { useAuthListener } from 'helpers/authListener';
 import { Favorites } from 'pages/Favorites/Favorites';
 import { Home } from 'pages/Home/Home';
 import { Teachers } from 'pages/Teachers/Teachers';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router';
+import { selectIsRefreshing } from './redux/auth/slice';
+import { refreshThunk } from './redux/auth/operations';
 import { PrivateRoute } from 'routes/PrivateRoute';
 
 const App = () => {
-  useAuthListener();
+  const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
+
+  useEffect(() => {
+    dispatch(refreshThunk());
+  }, [dispatch]);
+
+  if (isRefreshing) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -26,5 +38,4 @@ const App = () => {
     </Routes>
   );
 };
-
 export default App;

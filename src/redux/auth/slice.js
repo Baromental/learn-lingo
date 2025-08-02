@@ -1,4 +1,9 @@
-import { loginThunk, logoutThunk, registerThunk } from './operations';
+import {
+  loginThunk,
+  logoutThunk,
+  refreshThunk,
+  registerThunk,
+} from './operations';
 
 const { createSlice, isAnyOf } = require('@reduxjs/toolkit');
 
@@ -7,6 +12,7 @@ const initialState = {
     name: '',
     email: '',
   },
+  isRefreshing: false,
   isLoggedIn: false,
   loading: false,
   error: false,
@@ -20,6 +26,19 @@ const authSlice = createSlice({
     builder
       .addCase(logoutThunk.fulfilled, state => {
         return initialState;
+      })
+      .addCase(refreshThunk.pending, state => {
+        state.isRefreshing = true;
+      })
+      .addCase(refreshThunk.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.isLoggedIn = true;
+        state.isRefreshing = false;
+      })
+      .addCase(refreshThunk.rejected, state => {
+        state.isRefreshing = false;
+        state.user = null;
+        state.isLoggedIn = false;
       })
       .addMatcher(
         isAnyOf(registerThunk.fulfilled, loginThunk.fulfilled),
@@ -52,8 +71,10 @@ const authSlice = createSlice({
   selectors: {
     selectUser: state => state.user,
     selectIsLoggedIn: state => state.isLoggedIn,
+    selectIsRefreshing: state => state.isRefreshing,
   },
 });
 
 export const authReducer = authSlice.reducer;
-export const { selectUser, selectIsLoggedIn } = authSlice.selectors;
+export const { selectUser, selectIsLoggedIn, selectIsRefreshing } =
+  authSlice.selectors;

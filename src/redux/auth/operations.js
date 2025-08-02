@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
   updateProfile,
@@ -56,5 +57,21 @@ export const logoutThunk = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
+  }
+);
+
+export const refreshThunk = createAsyncThunk(
+  'auth/refreshUser',
+  (_, thunkAPI) => {
+    return new Promise((resolve, reject) => {
+      const onAuthChange = onAuthStateChanged(auth, user => {
+        onAuthChange();
+        if (user) {
+          resolve({ displayName: user.displayName || '', email: user.email });
+        } else {
+          reject('No user logged in');
+        }
+      });
+    });
   }
 );
