@@ -13,8 +13,8 @@ export const PrivateRoute = ({ children }) => {
   if (isRefreshing) {
     return <div>Loading...</div>;
   }
-  if (isLoggedIn) {
-    return children;
+  if (!isLoggedIn) {
+    return <Navigate to="/" state={{ from: location }} />;
   }
-  return <Navigate state={{ from: location }} to="/" />;
+  return children;
 };

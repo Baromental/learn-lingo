@@ -37,7 +37,6 @@ const authSlice = createSlice({
       })
       .addCase(refreshThunk.rejected, state => {
         state.isRefreshing = false;
-        state.user = null;
         state.isLoggedIn = false;
       })
       .addMatcher(
