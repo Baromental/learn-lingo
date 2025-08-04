@@ -44,7 +44,7 @@ const authSlice = createSlice({
         (state, { payload }) => {
           state.loading = false;
           state.isLoggedIn = true;
-          state.user.name = payload.displayName;
+          state.user.name = payload.name;
           state.user.email = payload.email;
         }
       )

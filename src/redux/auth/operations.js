@@ -38,9 +38,8 @@ export const loginThunk = createAsyncThunk(
         password
       );
       return {
+        name: userCredential.user.displayName || '',
         email: userCredential.user.email,
-        uid: userCredential.user.uid,
-        displayName: userCredential.user.displayName,
       };
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -64,10 +63,13 @@ export const refreshThunk = createAsyncThunk(
   'auth/refreshUser',
   (_, thunkAPI) => {
     return new Promise((resolve, reject) => {
-      const onAuthChange = onAuthStateChanged(auth, user => {
-        onAuthChange();
+      const unsubscribe = onAuthStateChanged(auth, user => {
+        unsubscribe();
         if (user) {
-          resolve({ displayName: user.displayName || '', email: user.email });
+          resolve({
+            name: user.displayName || '',
+            email: user.email,
+          });
         } else {
           reject('No user logged in');
         }
