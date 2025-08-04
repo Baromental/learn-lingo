@@ -16,6 +16,7 @@ const initialState = {
   isLoggedIn: false,
   loading: false,
   error: false,
+  authInitialized: false,
 };
 
 const authSlice = createSlice({
@@ -25,7 +26,10 @@ const authSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(logoutThunk.fulfilled, state => {
-        return initialState;
+        state.user = { name: '', email: '' };
+        state.isLoggedIn = false;
+        state.loading = false;
+        state.error = false;
       })
       .addCase(refreshThunk.pending, state => {
         state.isRefreshing = true;
@@ -34,10 +38,12 @@ const authSlice = createSlice({
         state.user = action.payload;
         state.isLoggedIn = true;
         state.isRefreshing = false;
+        state.authInitialized = true;
       })
       .addCase(refreshThunk.rejected, state => {
         state.isRefreshing = false;
         state.isLoggedIn = false;
+        state.authInitialized = true;
       })
       .addMatcher(
         isAnyOf(registerThunk.fulfilled, loginThunk.fulfilled),
@@ -71,9 +77,14 @@ const authSlice = createSlice({
     selectUser: state => state.user,
     selectIsLoggedIn: state => state.isLoggedIn,
     selectIsRefreshing: state => state.isRefreshing,
+    selectAuthInitialized: state => state.authInitialized,
   },
 });
 
 export const authReducer = authSlice.reducer;
-export const { selectUser, selectIsLoggedIn, selectIsRefreshing } =
-  authSlice.selectors;
+export const {
+  selectUser,
+  selectIsLoggedIn,
+  selectIsRefreshing,
+  selectAuthInitialized,
+} = authSlice.selectors;

@@ -61,10 +61,11 @@ export const logoutThunk = createAsyncThunk(
 
 export const refreshThunk = createAsyncThunk(
   'auth/refreshUser',
-  (_, thunkAPI) => {
+  async (_, thunkAPI) => {
     return new Promise((resolve, reject) => {
       const unsubscribe = onAuthStateChanged(auth, user => {
         unsubscribe();
+
         if (user) {
           resolve({
             name: user.displayName || '',
