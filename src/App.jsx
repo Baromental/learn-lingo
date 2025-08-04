@@ -5,13 +5,12 @@ import { Teachers } from 'pages/Teachers/Teachers';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router';
-import { selectAuthInitialized, selectIsRefreshing } from './redux/auth/slice';
+import { selectAuthInitialized } from './redux/auth/slice';
 import { refreshThunk } from './redux/auth/operations';
 import { PrivateRoute } from 'routes/PrivateRoute';
 
 const App = () => {
   const dispatch = useDispatch();
-  const isRefreshing = useSelector(selectIsRefreshing);
   const isAuthInitialized = useSelector(selectAuthInitialized);
 
   useEffect(() => {
