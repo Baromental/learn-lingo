@@ -51,9 +51,9 @@ export const Navbar = () => {
           Teachers
         </NavLink>
         {isLoggedIn && (
-          <NavLink className={s.link} to="/favorites">
-            Favorites
-          </NavLink>
+          // <NavLink className={s.link} to="/favorites">
+          //   Favorites
+          // </NavLink>
         )}
       </div>
       {isLoggedIn ? (
