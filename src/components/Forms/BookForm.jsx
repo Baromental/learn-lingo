@@ -18,7 +18,7 @@ export const BookForm = ({ teacher }) => {
         />
         <div className={s.teacherNameContainer}>
           <p className={s.label}>Your teacher</p>
-          <p className={s.name}>
+          {/* <p className={s.name}> */}
             {teacher.name} {teacher.surname}
           </p>
         </div>
