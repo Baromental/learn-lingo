@@ -31,7 +31,7 @@ export const BookForm = ({ teacher }) => {
           <div className={s.radioInputContainer}>
             <input
               className={s.inputRadio}
-              type="radio"
+              // type="radio"
               name="reason"
               value="career"
             />
